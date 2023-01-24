@@ -16,10 +16,9 @@ graph LR;
     A-->C(Instance 2);
     A-->D(Instance 3);
 ```
-## Other best practices
+## Other security best practices
 - Enable identity
 - Enable encryption at rest
-- Enable caching
 - For ASE, be careful not to block certain ports (via NSGs) which are required for the service to operate correctly
 - Enable logging and monitoring
 
