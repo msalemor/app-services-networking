@@ -27,7 +27,7 @@ graph LR;
 
 ```mermaid
 graph LR;
-    A((Cloud))-- IP -->B(App Service<br/>Web App);
+    A((Internet))-- IP -->B(App Service<br/>Web App);
     B-- ServiceTags -->C(Azure SQL);
 ```
 
@@ -47,7 +47,7 @@ Security at this level:
 
 ```mermaid
 graph LR;
-    Z((Cloud))-->A;
+    Z((Internet))-->A;
     A(AppGW/WAF)-- Service Tags-->B(App Service<br/>Web App);
     B-- ServiceTags -->C(Azure SQL);
 ```
@@ -70,7 +70,7 @@ Security at this level:
 
 ```mermaid
 graph LR;
-    A((Cloud))-->B[FrontDoor/WAF];
+    A((Internet))-->B[FrontDoor/WAF];
     B-- ServiceTags -->C[App Service<br/>Web App<br/>VNET Integration];
     C-- Private Endpoint-->D[Azure SQL];   
 ```
@@ -97,7 +97,7 @@ Security at this level:
 
 ```mermaid
 graph LR;
-    A((Cloud))-->B(FrontDoor/WAF);
+    A((Internet))-->B(FrontDoor/WAF);
     B-- Private Endpoint -->C(App Service<br/>Web App<br/>VNET Integration);
     C-- Private Endpoint-->D(Azure SQL);   
 ```
@@ -123,13 +123,16 @@ Security at this level:
 
 ```mermaid
 graph LR;
-    A((Cloud))-->B[AppGw/WAF];
-    B-->C[ASE];
-    C-->D[Azure MI];
+    A((Internet))-->B((Public IP));
+    B-->C[AppGw/WAF];
+    C-->D[ASE v3];
+    D-->E[SQL MI]
 ```
 
 Azure Services:
 - VNET
+- Public IP
+- Application Gateway in WAF mode
 - App Service Isolated plan
 - App Service Web App with VNET integration deployed into subnets
 - Azure SQL MI deployed to a subnet
