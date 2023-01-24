@@ -22,7 +22,7 @@ graph LR;
 - For ASE, be careful not to block certain ports (via NSGs) which are required for the service to operate correctly
 - Enable logging and monitoring
 
-## Desings in order or improved security
+## App Services solution deployments in order or improved security
 
 ### App Service with IP Filter & Data with Service Tags
 
