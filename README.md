@@ -119,7 +119,7 @@ Security at this level:
 - Traffic from App to Data can only come from app services via the backend subnet into the Private Endpoint into Azure SQL
 - All traffic flows inside the Microsoft backbone
 
-### App Service Environments and SQL MI
+### App Service Environments (ASE v3) and SQL MI
 
 ```mermaid
 graph LR;
