@@ -1,4 +1,4 @@
-# Azure App Services Networking
+# Azure App Services Networking and Security
 
 Many customers coming to Azure ask the question, "is our design secure?" Security is a big and important topic, but a good answer has to do with meeting the security compliance requirements of your organization. Understanding which model will meet these requirements is key to being in compliance.
 
