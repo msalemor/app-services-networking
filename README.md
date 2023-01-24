@@ -28,7 +28,7 @@ graph LR;
 ```mermaid
 graph LR;
     A((Internet))-- IP -->B(App Service<br/>Web App);
-    B-- ServiceTags -->C(Azure SQL);
+    B-- Service Tags -->C(Azure SQL);
 ```
 
 Azure Services:
@@ -50,7 +50,7 @@ graph LR;
     A((Internet))-->B((Public IP));
     B-->C(AppGW/WAF);
     C-->D(AppService<br/>Web App);
-    D-- ServiceTags -->E(Azure SQL);
+    D-- Service Tags -->E(Azure SQL);
 ```
 
 Azure Services:
@@ -74,7 +74,7 @@ Security at this level:
 ```mermaid
 graph LR;
     A((Internet))-->B[FrontDoor/WAF];
-    B-- ServiceTags -->C[App Service<br/>Web App<br/>VNET Integration];
+    B-- Service Tags -->C[App Service<br/>Web App<br/>VNET Integration];
     C-- Private Endpoint-->D[Azure SQL];   
 ```
 
