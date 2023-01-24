@@ -1,5 +1,6 @@
 # Azure App Services Networking
 
+
 ## App Service Design
 
 - App Service have a reverse proxy into the instances
@@ -12,8 +13,13 @@ graph LR;
     A-->C(Instance 2);
     A-->D(Instance 3);
 ```
+## Other best practices
+- Enable identity
+- Enable encryption at rest
+- Enable caching
+- Enable logging and monitoring
 
-## Possible designs in order of improved security
+## Desings in order or improved security
 
 ### App Service with IP Filter & Data with ServiceTags
 
@@ -30,9 +36,9 @@ Azure Services:
 
 Security at this level:
 - No WAF (recommended)
-- TLS enforced and cad add custom certificate
+- TLS enforced and custom certificate can be added to the Web App
 - Traffic into the web app can be limited to one IP (i.e. the corporate firewall IP). Otherwise, it is encrypted but open.
-- Traffic from App to Data can only come from app services
+- Traffic from App to Data can only come from app services by setting the ServiceTags in the Database firewall settings.
 - All traffic traverses the internet
 
 ### Application Gateway, App Service with Service Tags, and Data Firewall with Service Tags
@@ -58,7 +64,7 @@ Security at this level:
 - Traffic from App to Data can only come from app services via database firewall using ServiceTags
 - All traffic traverses the internet
 
-### FrontDoor, App Service with Service Tags and VNET integration, and Data Private Endpoint
+### FrontDoor Standard, App Service with Service Tags and VNET integration, and Data Private Endpoint
 
 ```mermaid
 graph LR;
@@ -89,9 +95,9 @@ Security at this level:
 
 ```mermaid
 graph LR;
-    A((Cloud))-->B[FrontDoor/WAF];
-    B-- Private Endpoint -->C[App Service<br>VNET Integration];
-    C-- Private Endpoint-->D[Azure SQL];   
+    A((Cloud))-->B(FrontDoor/WAF);
+    B-- Private Endpoint -->C(App Service<br>VNET Integration);
+    C-- Private Endpoint-->D(Azure SQL);   
 ```
 
 Azure Services:
