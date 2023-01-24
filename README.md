@@ -47,12 +47,14 @@ Security at this level:
 
 ```mermaid
 graph LR;
-    Z((Internet))-->A;
-    A(AppGW/WAF)-- Service Tags-->B(App Service<br/>Web App);
-    B-- ServiceTags -->C(Azure SQL);
+    A((Internet))-->B((Public IP));
+    B-->C(AppGW/WAF);
+    C-->D(AppService<br/>Web App);
+    D-- ServiceTags -->E(Azure SQL);
 ```
 
 Azure Services:
+- Public IP
 - VNET
 - Application Gateway in WAF mode deployed to a subnet
 - App Service plan
@@ -60,6 +62,7 @@ Azure Services:
 - Azure SQL
 
 Security at this level:
+- Public IP (DDOS protection)
 - TLS enforced and custom certificate can be added to the Web App
 - Application Gateway can do SSL offloading but can also handle end-to-end encryption
 - Traffic into the web app can only come from application gateway
