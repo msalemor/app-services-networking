@@ -4,7 +4,7 @@
 ## App Service Design
 
 - App Service have a reverse proxy into the instances
-- Reverse proxy has a public IP
+- Reverse proxy exposes a public IP
 
 ```mermaid
 graph LR;
