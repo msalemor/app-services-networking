@@ -136,6 +136,8 @@ Azure Services:
 
 Security at this level:
 - TLS enforced, cad add custom certificate to Application Gateway, and Application Gateway can do SSL offloading
-- Traffic into the web app from application gateway
-- Traffic from App to Data can only come from app services via the backend subnet into Azure SQL MI
+- App Service Environment deployed to VNET subnet obtaining a private IP
+- SQL MI deployed to a VNET subnet obtaining a private IP
+- Traffic into the web app can only come from application gateway via the private IP
+- Traffic from the Web App to SQL can only come from app services via the backend subnet
 - All traffic flows inside the Microsoft backbone and there are no public IPs
