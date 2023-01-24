@@ -73,7 +73,7 @@ Security at this level:
 
 ```mermaid
 graph LR;
-    A((Internet))-->B[FrontDoor/WAF];
+    A((Internet))-->B[Front Door/WAF];
     B-- Service Tags -->C[App Service<br/>Web App<br/>VNET Integration];
     C-- Private Endpoint-->D[Azure SQL];   
 ```
@@ -101,7 +101,7 @@ Security at this level:
 
 ```mermaid
 graph LR;
-    A((Internet))-->B(FrontDoor/WAF);
+    A((Internet))-->B(Front Door/WAF);
     B-- Private Endpoint -->C(App Service<br/>Web App<br/>VNET Integration);
     C-- Private Endpoint-->D(Azure SQL);   
 ```
