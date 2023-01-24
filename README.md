@@ -63,6 +63,7 @@ Azure Services:
 
 Security at this level:
 - Public IP (DDOS protection)
+- WAF protection
 - TLS enforced and custom certificate can be added to the Web App
 - Application Gateway can do SSL offloading but can also handle end-to-end encryption
 - Traffic into the web app can only come from application gateway
@@ -91,6 +92,7 @@ Azure Services:
 - Azure SQL under Private Endpoint
 
 Security at this level:
+- WAF protection
 - TLS enforced and cad add custom certificate to Azure Froont Door for SSL offloading or have end-to-end encryption
 - Traffic into the web app can only come from Azure FrontDoor
 - Traffic from App to Data can only come from app services via the backend subnet into the Private Endpoint into Azure SQL
@@ -119,6 +121,7 @@ Azure Services:
 - Azure SQL under Private Endpint
 
 Security at this level:
+- WAF protection
 - TLS enforced and cad add custom certificate to Azure Froont Door for SSL offloading or end-to-end encryption
 - Traffic into the web app can only come from Azure FrontDoor and the Azure backbone
 - Traffic from App to Data can only come from app services via the backend subnet into the Private Endpoint into Azure SQL
@@ -145,6 +148,7 @@ Azure Services:
 
 Security at this level:
 - Public IP (DDOS protection)
+- - WAF protection
 - TLS enforced, cad add custom certificate to Application Gateway, and Application Gateway can do SSL offloading
 - App Service Environment deployed to VNET subnet obtaining a private IP
 - SQL MI deployed to a VNET subnet obtaining a private IP
