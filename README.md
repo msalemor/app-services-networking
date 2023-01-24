@@ -1,5 +1,6 @@
 # Azure App Services Networking
 
+The purpose of this post is to be able to explain the different security models and considerations when considering Azure App Services as part of a solution. For purposes of simplicity, I will be using a two-tier architecture, but this can quickly be extended to 3-tier, microservices, etc. as the same concepts apply.
 
 ## App Service Design
 
