@@ -16,7 +16,7 @@ graph LR;
     A-->C(Instance 2);
     A-->D(Instance 3);
 ```
-## Other security best practices
+## Other security best practices for App Services
 - Enable identity
 - Enable encryption at rest
 - For ASE, be careful not to block certain ports (via NSGs) which are required for the service to operate correctly
