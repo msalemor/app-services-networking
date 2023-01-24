@@ -18,7 +18,7 @@ graph LR;
 - Enable identity
 - Enable encryption at rest
 - Enable caching
-- For ASE, be careful not to block certain ports which are required for the service to operate correctly
+- For ASE, be careful not to block certain ports (via NSGs) which are required for the service to operate correctly
 - Enable logging and monitoring
 
 ## Desings in order or improved security
