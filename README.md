@@ -141,3 +141,9 @@ Security at this level:
 - Traffic into the web app can only come from application gateway via the private IP
 - Traffic from the Web App to SQL can only come from app services via the backend subnet
 - All traffic flows inside the Microsoft backbone and there are no public IPs
+
+### References
+
+- [Front Door Premium and App Service](https://learn.microsoft.com/en-us/azure/frontdoor/standard-premium/how-to-enable-private-link-web-app)
+- [Azure SQL-Prinvate Endpoint](https://learn.microsoft.com/en-us/azure/private-link/tutorial-private-endpoint-sql-portal)
+- [ASE v3 Networking](https://learn.microsoft.com/en-us/azure/app-service/environment/networking)
