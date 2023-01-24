@@ -6,8 +6,8 @@ The purpose of this post is to be able to quickly compare the different secuirty
 
 ## App Service Design - Where is that Public IP?
 
-- App Service have a reverse proxy into the instances
-- Reverse proxy exposes a public IP
+- An App Service has a reverse proxy into the instances
+- The reverse proxy exposes a public IP
 
 ```mermaid
 graph LR;
