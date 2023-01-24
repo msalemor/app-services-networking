@@ -138,6 +138,7 @@ Azure Services:
 - Azure SQL MI deployed to a subnet
 
 Security at this level:
+- Public IP (DDOS protection)
 - TLS enforced, cad add custom certificate to Application Gateway, and Application Gateway can do SSL offloading
 - App Service Environment deployed to VNET subnet obtaining a private IP
 - SQL MI deployed to a VNET subnet obtaining a private IP
