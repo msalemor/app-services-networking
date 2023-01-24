@@ -1,6 +1,6 @@
 # Azure App Services Networking
 
-Many customers coming to Azure ask the question, "is our design secure?" Security is a big and important topic, but a good answer has to do with the secuirty compliance requirements of your organization. Understanding which model will meet these requirements is key to being in compliance.
+Many customers coming to Azure ask the question, "is our design secure?" Security is a big and important topic, but a good answer has to do with meeting the security compliance requirements of your organization. Understanding which model will meet these requirements is key to being in compliance.
 
 The purpose of this post is to be able to quickly compare the different secuirty consideration for different App Services networking models. For simplicity, the post is based on a two-tier architecture application, but this can quickly be extended to 3-tier, microservices, and other more complex architectures involving other Azure Services as the same concepts apply.
 
