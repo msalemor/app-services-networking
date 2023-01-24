@@ -116,3 +116,12 @@ Security at this level:
 - Traffic into the web app can only come from Azure FrontDoor and the Azure backbone
 - Traffic from App to Data can only come from app services via the backend subnet into the Private Endpoint into Azure SQL
 - All traffic flows inside the Microsoft backbone
+
+### App Service Environments
+
+```mermaid
+graph LR;
+    A((Cloud))-->B[Application Gateway];
+    B-->C[ASE];
+    C-->D[Azure MI];
+```
