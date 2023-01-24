@@ -136,4 +136,4 @@ Security at this level:
 - TLS enforced, cad add custom certificate to Application Gateway, and Application Gateway can do SSL offloading
 - Traffic into the web app from application gateway
 - Traffic from App to Data can only come from app services via the backend subnet into Azure SQL MI
-- All traffic flows inside the Microsoft backbone and there are no public IP
+- All traffic flows inside the Microsoft backbone and there are no public IPs
