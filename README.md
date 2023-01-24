@@ -24,7 +24,7 @@ graph LR;
 
 ## Desings in order or improved security
 
-### App Service with IP Filter & Data with ServiceTags
+### App Service with IP Filter & Data with Service Tags
 
 ```mermaid
 graph LR;
