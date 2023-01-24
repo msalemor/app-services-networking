@@ -81,6 +81,7 @@ graph LR;
 Azure Services:
 - Azure FrontDoor Standard Plan
 - VNET
+- NSG
 - App Service plan
 - App Service Web App with VNET integration
   - Note: VNET integration requires a backend subnet in a VNET 
@@ -108,6 +109,7 @@ graph LR;
 Azure Services:
 - Azure FrontDoor Premium Plan
 - VNET
+- NSG
 - App Service plan
 - App Service Web App under Private Endpoint with VNET integration
   - Note: VNET integration requires a backend subnet in a VNET 
@@ -134,6 +136,7 @@ graph LR;
 
 Azure Services:
 - VNET
+- NSG
 - Public IP
 - Application Gateway in WAF mode
 - App Service Isolated plan
