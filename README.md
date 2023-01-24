@@ -2,7 +2,7 @@
 
 The purpose of this post is to be able to quickly compare the different secuirty consideration for different App Services networking models. For simplicity, the post is based on a two-tier architecture application, but this can quickly be extended to 3-tier, microservices, and other more complex architectures involving other Azure Services as the same concepts apply.
 
-## App Service Design
+## App Service Design - Where is that Public IP?
 
 - App Service have a reverse proxy into the instances
 - Reverse proxy exposes a public IP
