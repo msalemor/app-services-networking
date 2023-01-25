@@ -38,6 +38,9 @@ graph LR;
 graph LR;
     A((Internet))-- IP -->B(App Service<br/>Web App);
     B-- Service Tags -->C(Azure SQL);
+    style A fill:#007FFF,stroke:#333,stroke-width:1px,color:#fff;
+    style B fill:#007FFF,stroke:#333,stroke-width:1px
+    style C fill:#007FFF,stroke:#333,stroke-width:1px
 ```
 
 Azure Services:
