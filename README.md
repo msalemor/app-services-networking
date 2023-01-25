@@ -6,7 +6,7 @@ The purpose of this post is to be able to quickly compare the different secuirty
 
 ## App Service Overview
 
-## App Service Networking and Security
+## App Service Networking Features
 
 - Inbound rules: IP and Service Tags rules that can be applied as inbound rules to the App Service
 - VNET Integration: A feature of App Services that allows it to connect to private services via a backend subnet
