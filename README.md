@@ -75,10 +75,10 @@ Security at this level:
 
 ```mermaid
 graph LR;
-    A((Internet))-->B[Front Door/WAF];
-    B-- Service Tags -->C[App Service<br/>Web App<br/>VNET Integration];
-    C-->D[Private<br/>Endpoint];   
-    D-->E[Azure SQL]
+    A((Internet))-->B(Front Door/WAF);
+    B-- Service Tags -->C(App Service<br/>Web App<br/>VNET Integration);
+    C-->D(Private<br/>Endpoint);
+    D-->E(Azure SQL);
 ```
 
 Azure Services:
@@ -106,9 +106,10 @@ Security at this level:
 ```mermaid
 graph LR;
     A((Internet))-->B(Front Door/WAF);
-    B-- Private Endpoint -->C(App Service<br/>Web App<br/>VNET Integration);
-    C-->D[Private<br/>Endpoint];
-    D-->E[Azure SQL]    
+    B-->C(Private<br/>Endpoint);
+    C-->D(App Service<br/>Web App<br/>VNET Integration);
+    D-->E(Private<br/>Endpoint);
+    E-->F(Azure SQL);    
 ```
 
 Azure Services:
@@ -135,10 +136,10 @@ Security at this level:
 ```mermaid
 graph LR;
     A((Internet))-->B((Public IP));
-    B-->C[AppGw/WAF];
-    C-->D[ASE v3];
-    D-->E[Private<br/>Endpoint]
-    E-->F[Azure SQL]
+    B-->C(AppGw/WAF);
+    C-->D(ASE v3);
+    D-->E(Private<br/>Endpoint);
+    E-->F(Azure SQL);
 ```
 
 Azure Services:
@@ -168,9 +169,9 @@ Security at this level:
 ```mermaid
 graph LR;
     A((Internet))-->B((Public IP));
-    B-->C[AppGw/WAF];
-    C-->D[ASE v3];
-    D-->E[SQL MI]
+    B-->C(AppGw/WAF);
+    C-->D(ASE v3);
+    D-->E(SQL MI);
 ```
 
 Azure Services:
