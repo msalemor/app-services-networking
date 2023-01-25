@@ -12,9 +12,13 @@ The purpose of this post is to be able to quickly compare the different secuirty
 ```mermaid
 graph LR;
     Z((public IP))-->A;
-    A[reverse Proxy]-->B(Instance 1);
+    A(reverse Proxy)-->B(Instance 1);
     A-->C(Instance 2);
     A-->D(Instance 3);
+    style Z fill:#007FFF,stroke:#333,stroke-width:1px,color:#fff;
+    style A fill:#4DFF4D,stroke:#333,stroke-width:1px;
+    classDef someclass fill:#f96;
+    class B,C,D someclass;
 ```
 ## Other security best practices for App Services
 - Enable identity
