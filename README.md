@@ -8,6 +8,13 @@ The purpose of this post is to be able to quickly compare the different secuirty
 
 ## App Service Networking and Security
 
+- Inbound rules: IP and Service Tags rules that can be applied as inbound rules to the App Service
+- VNET Integration: A feature of App Services that allows it to connect to private services via a backend subnet
+- Route ALL Switch: In App Service VNET integration this switch will tell the networking if all traffic should exit the App Service through the Azure backbone
+- UDRs: A UDR can be applied to traffic from the backed subnet
+- NAT Gateway: A NAT gateway can be applied to the outbound IPs
+- ASE Subnet Deployment
+
 ## App Service Design - Where is that Public IP?
 
 - An App Service has a reverse proxy into the instances
