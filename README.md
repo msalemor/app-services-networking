@@ -24,7 +24,7 @@ graph LR;
 
 ## App Services solution deployments in order or improved security
 
-### App Service with IP Filter & Data with Service Tags
+### App Service with IP Filter & Azure SQL with Service Tags
 
 ```mermaid
 graph LR;
@@ -44,7 +44,7 @@ Security at this level:
 - Traffic from App to Data can only come from app services by setting the ServiceTags in the Database firewall settings.
 - All traffic traverses the internet
 
-### Application Gateway, App Service with Service Tags, and Data Firewall with Service Tags
+### Application Gateway, App Service with Service Tags, and Azure SQL with Firewall with Service Tags
 
 ```mermaid
 graph LR;
@@ -71,13 +71,14 @@ Security at this level:
 - Traffic from App to Data can only come from app services via database firewall using ServiceTags
 - All traffic traverses the internet
 
-### FrontDoor Standard, App Service with Service Tags and VNET integration, and Data Private Endpoint
+### FrontDoor Standard, App Service with Service Tags and VNET integration, and Azure SQL with Private Endpoint
 
 ```mermaid
 graph LR;
     A((Internet))-->B[Front Door/WAF];
     B-- Service Tags -->C[App Service<br/>Web App<br/>VNET Integration];
-    C-- Private Endpoint-->D[Azure SQL];   
+    C-->D[Private<br/>Endpoint];   
+    D-->E[Azure SQL]
 ```
 
 Azure Services:
@@ -100,13 +101,14 @@ Security at this level:
 - Traffic between the Web App and Data traverses the Azure backbone
 - Traffic from the FrontDoor to the App goes over the internet
 
-### FrontDoor Premium, App Service under Private Endpoint and VNET integration, and Data Private Endpoint
+### FrontDoor Premium, App Service under Private Endpoint and VNET integration, and Azure SQL with Private Endpoint
 
 ```mermaid
 graph LR;
     A((Internet))-->B(Front Door/WAF);
     B-- Private Endpoint -->C(App Service<br/>Web App<br/>VNET Integration);
-    C-- Private Endpoint-->D(Azure SQL);   
+    C-->D[Private<br/>Endpoint];
+    D-->E[Azure SQL]    
 ```
 
 Azure Services:
@@ -127,6 +129,39 @@ Security at this level:
 - Traffic into the web app can only come from Azure FrontDoor and the Azure backbone
 - Traffic from App to Data can only come from app services via the backend subnet into the Private Endpoint into Azure SQL
 - All traffic flows inside the Microsoft backbone
+
+### App Service Environments (ASE v3) and Azure SQL with Private Endpoint
+
+```mermaid
+graph LR;
+    A((Internet))-->B((Public IP));
+    B-->C[AppGw/WAF];
+    C-->D[ASE v3];
+    D-->E[Private<br/>Endpoint]
+    E-->F[Azure SQL]
+```
+
+Azure Services:
+- VNET
+- NSG
+- Public IP
+- Application Gateway in WAF mode
+- App Service Isolated plan
+- App Service Web App with VNET integration deployed into subnets
+- Private DNS Zone
+- Private Endpoint for Azure SQL
+- Azure SQL
+
+Security at this level:
+- Public IP (DDOS protection)
+- - WAF protection
+- TLS enforced, cad add custom certificate to Application Gateway, and Application Gateway can do SSL offloading
+- App Service Environment deployed to VNET subnet obtaining a private IP
+- SQL MI deployed to a VNET subnet obtaining a private IP
+- Traffic into the web app can only come from application gateway via the private IP
+- Traffic from the Web App to Azure SQL can only come from app services via the backend subnet and the Private Endpoint
+- All traffic flows inside the Microsoft backbone
+
 
 ### App Service Environments (ASE v3) and SQL MI
 
@@ -154,7 +189,7 @@ Security at this level:
 - App Service Environment deployed to VNET subnet obtaining a private IP
 - SQL MI deployed to a VNET subnet obtaining a private IP
 - Traffic into the web app can only come from application gateway via the private IP
-- Traffic from the Web App to SQL can only come from app services via the backend subnet
+- Traffic from the Web App to Azure SQL MI can only come from app services via the backend subnet
 - All traffic flows inside the Microsoft backbone and there are no public IPs
 
 ### References
