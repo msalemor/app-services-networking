@@ -62,9 +62,12 @@ graph LR;
 graph LR;
     A((Internet))-- IP -->B(App Service<br/>Web App);
     B-- Service Tags -->C(Azure SQL);
-    style A fill:#007FFF,stroke:#333,stroke-width:1px,color:#fff;
-    style B fill:#007FFF,stroke:#333,stroke-width:1px
-    style C fill:#007FFF,stroke:#333,stroke-width:1px
+    classDef internet fill:#007FFF,color:white;
+    classDef unsafe fill:green,color:white;
+    classDef semisafe fill:orange,color:black;
+    class A internet;
+    class B unsafe;
+    class C semisafe;
 ```
 
 Azure Services:
@@ -85,10 +88,16 @@ Security at this level:
 graph LR;
     A((Internet))-->B((Public IP));
     B-->C(AppGW/WAF);
-    C-->D(AppService<br/>Web App);
+    C--Subnet<br/>Restriction-->D(AppService<br/>Web App);
     D-- Service Tags -->E(Azure SQL);
+    classDef internet fill:#007FFF,color:white;
+    classDef unsafe fill:green,color:white;
     classDef semisafe fill:orange,color:black;
-    class E semisafe;
+    classDef safe fill:red,color:white;
+    class A internet;
+    class B unsafe;
+    class C safe;
+    class E,D semisafe;
 ```
 
 Azure Services:
@@ -116,6 +125,9 @@ graph LR;
     B-- Service Tags -->C(App Service<br/>Web App<br/>VNET Integration);
     C-->D(Private<br/>Endpoint);
     D-->E(Azure SQL);
+    classDef unsafe fill:green,color:black
+    classDef semisafe fill:orange,color:black
+    
 ```
 
 Azure Services:
