@@ -48,11 +48,11 @@ graph LR;
     classDef instances fill:purple,color:white;
     class B,C,D instances;    
 ```
-## Other security best practices for App Services
+## Other security best practices for App Services and Azure SQL
 - Enable identity
-- Enable encryption at rest
 - For ASE, be careful not to block certain ports (via NSGs) which are required for the service to operate correctly
 - Enable logging and monitoring
+- Enable encryption at rest
 
 ## App Services solution deployments in order or improved security
 
