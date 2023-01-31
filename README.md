@@ -37,14 +37,16 @@ The purpose of this post is to be able to quickly compare the different secuirty
 
 ```mermaid
 graph LR;
-    Z((public IP))-->A;
-    A(reverse Proxy)-->B(Instance 1);
+    Z((Public IP))-->A;
+    A(Reverse<br/>Proxy)-->B(Instance 1);
     A-->C(Instance 2);
     A-->D(Instance 3);
-    style Z fill:#007FFF,stroke:#333,stroke-width:1px,color:#fff;
-    style A fill:#4DFF4D,stroke:#333,stroke-width:1px;
-    classDef someclass fill:#f96;
-    class B,C,D someclass;
+    classDef internet fill:#007FFF,color:white;
+    class Z internet;
+    classDef proxy fill:green,color:white;
+    class A proxy;
+    classDef instances fill:purple,color:white;
+    class B,C,D instances;    
 ```
 ## Other security best practices for App Services
 - Enable identity
@@ -85,6 +87,8 @@ graph LR;
     B-->C(AppGW/WAF);
     C-->D(AppService<br/>Web App);
     D-- Service Tags -->E(Azure SQL);
+    classDef semisafe fill:orange,color:black;
+    class E semisafe;
 ```
 
 Azure Services:
