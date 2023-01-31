@@ -43,7 +43,7 @@ graph LR;
     A-->D(Instance 3);
     classDef internet fill:#007FFF,color:white;
     class Z internet;
-    classDef proxy fill:green,color:white;
+    classDef proxy fill:magenta,color:white;
     class A proxy;
     classDef instances fill:purple,color:white;
     class B,C,D instances;    
