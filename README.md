@@ -15,6 +15,21 @@ The purpose of this post is to be able to quickly compare the different secuirty
 - NAT Gateway: A NAT gateway can be applied to the outbound IPs
 - ASE Subnet Deployment
 
+## Resiliency
+
+- Leverage scaling including up and down and in and out
+- Keep at least two instances
+- Leverage multi-zonal deployments
+- Deploy with services with IaC
+- Leverage DevOps CI/CD piplelines
+- Monitoring
+
+## Cost
+
+- Right sizing
+- Scaling
+- Monitoring
+
 ## App Service Design - Where is that Public IP?
 
 - An App Service has a reverse proxy into the instances
