@@ -134,7 +134,7 @@ Suitable scenarios:
 - QA, UAT, PROD
 
 
-### FrontDoor Standard, App Service with Service Tags and VNET integration, and Azure SQL with Private Endpoint
+### Front Door Standard, App Service with Service Tags and VNET integration, and Azure SQL with Private Endpoint
 
 ```mermaid
 graph LR;
@@ -168,7 +168,7 @@ Security at this level:
 - Traffic between the Web App and Data traverses the Azure backbone
 - Traffic from the FrontDoor to the App goes over the internet
 
-### FrontDoor Premium, App Service under Private Endpoint and VNET integration, and Azure SQL with Private Endpoint
+### Front Door Premium, App Service under Private Endpoint and VNET integration, and Azure SQL with Private Endpoint
 
 ```mermaid
 graph LR;
