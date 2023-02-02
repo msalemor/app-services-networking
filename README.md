@@ -144,11 +144,11 @@ graph LR;
     a1(Web App);
   end; 
   a1-->a3;
-  subgraph "Be Subnet"
+  subgraph "Backend<br/>Subnet"
     a3(VNET<br/>Integration);
   end;
   a3-->a2;
-  subgraph "Pe Subnet"
+  subgraph "Private Subnet<br/>Subnet"
     a2(Private<br/>Endpoint);
   end;
   a2-->E(Azure<br/>SQL);
