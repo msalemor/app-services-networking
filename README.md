@@ -148,7 +148,7 @@ graph LR;
     a3(VNET<br/>Integration);
   end;
   a3-->a2;
-  subgraph "Private Subnet<br/>Subnet"
+  subgraph "Private Endpoint<br/>Subnet"
     a2(Private<br/>Endpoint);
   end;
   a2-->E(Azure<br/>SQL);
