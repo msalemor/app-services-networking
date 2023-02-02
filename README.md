@@ -64,7 +64,7 @@ graph LR;
   subgraph "App Service Plan"
     a1(Web App)
   end
-  a1-- Service Tags -->C(Azure SQL);
+  a1-- Service Tags -->C(Azure<br/>SQL);
   classDef internet fill:#007FFF,color:white;
   classDef unsafe fill:#ff3333,color:white;
   classDef semisafe fill:darkorange,color:black;
@@ -96,13 +96,13 @@ graph LR;
   A((Internet))-->B((Public IP));
   B-->a2;
   subgraph "Subnet"
-    a2(AppGw/WAF);
+    a2(AppGw<br/>WAF);
   end
   a2--Subnet<br/>Restriction-->a1;
   subgraph "App Service Plan"
     a1(Web App)
   end
-  a1-- Service Tags -->E(Azure SQL);
+  a1-- Service Tags -->E(Azure<br/>SQL);
   classDef internet fill:#007FFF,color:white;
   classDef unsafe fill:#ff3333,color:white;
   classDef semisafe fill:darkorange,color:black;
@@ -149,7 +149,7 @@ graph LR;
   subgraph "Subnet"
     a2(Private<br/>Endpoint);
   end;
-  a2-->E(Azure SQL);
+  a2-->E(Azure<br/>SQL);
   classDef internet fill:#007FFF,color:white;
   classDef unsafe fill:#ff3333,color:white;
   classDef semisafe fill:darkorange,color:black;
