@@ -63,8 +63,9 @@ graph LR;
     A((Internet))-- IP -->B(App Service<br/>Web App);
     B-- Service Tags -->C(Azure SQL);
     classDef internet fill:#007FFF,color:white;
-    classDef unsafe fill:green,color:white;
+    classDef unsafe fill:red,color:white;
     classDef semisafe fill:orange,color:black;
+    classDef safe fill:darkgreen,color:black;
     class A internet;
     class B unsafe;
     class C semisafe;
@@ -81,6 +82,9 @@ Security at this level:
 - Traffic into the web app can be limited to one IP (i.e. the corporate firewall IP). Otherwise, it is encrypted but open.
 - Traffic from App to Data can only come from app services by setting the ServiceTags in the Database firewall settings.
 - All traffic traverses the internet
+
+Suitable scenarios:
+- Dev, Test, POC, Personal Project
 
 ### Application Gateway, App Service with Service Tags, and Azure SQL with Firewall with Service Tags
 
@@ -116,6 +120,10 @@ Security at this level:
 - Traffic into the web app can only come from application gateway
 - Traffic from App to Data can only come from app services via database firewall using ServiceTags
 - All traffic traverses the internet
+
+Suitable scenarios:
+- QA, UAT, PROD
+
 
 ### FrontDoor Standard, App Service with Service Tags and VNET integration, and Azure SQL with Private Endpoint
 
