@@ -68,10 +68,10 @@ graph LR;
   classDef internet fill:#007FFF,color:white;
   classDef unsafe fill:#ff3333,color:white;
   classDef semisafe fill:darkorange,color:black;
-  classDef safe fill:darkgreen,color:black;
+  classDef safe fill:darkgreen,color:white;
   class A internet;
   class a1 unsafe;
-  class C semisafe;
+  class C safe;
 ```
 
 Azure Services:
@@ -93,21 +93,24 @@ Suitable scenarios:
 
 ```mermaid
 graph LR;
-    A((Internet))-->B((Public IP));
-    B-->C(AppGW/WAF);
-    C--Subnet<br/>Restriction-->a1;
-    subgraph "App Service Plan"
+  A((Internet))-->B((Public IP));
+  B-->a2;
+  subgraph "Subnet"
+    a2(AppGw/WAF);
+  end
+  a2--Subnet<br/>Restriction-->a1;
+  subgraph "App Service Plan"
     a1(Web App)
-    end
-    a1-- Service Tags -->E(Azure SQL);
-    classDef internet fill:#007FFF,color:white;
-    classDef unsafe fill:green,color:white;
-    classDef semisafe fill:orange,color:black;
-    classDef safe fill:red,color:white;
-    class A internet;
-    class B unsafe;
-    class C safe;
-    class E,D semisafe;
+  end
+  a1-- Service Tags -->E(Azure SQL);
+  classDef internet fill:#007FFF,color:white;
+  classDef unsafe fill:#ff3333,color:white;
+  classDef semisafe fill:darkorange,color:black;
+  classDef safe fill:darkgreen,color:white;
+  class A internet;
+  class B unsafe;
+  class E semisafe;
+  class C,a1,a2,E safe;
 ```
 
 Azure Services:
