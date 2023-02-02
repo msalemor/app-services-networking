@@ -108,7 +108,6 @@ graph LR;
   classDef semisafe fill:darkorange,color:black;
   classDef safe fill:darkgreen,color:white;
   class A internet;
-  class B unsafe;
   class E semisafe;
   class C,a1,a2,E safe;
 ```
@@ -254,7 +253,6 @@ graph LR;
   classDef semisafe fill:darkorange,color:black;
   classDef safe fill:darkgreen,color:white;
   class A internet;
-  class B semisafe;
   class a1,a2,a3,F safe;    
 ```
 
