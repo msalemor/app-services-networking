@@ -60,15 +60,18 @@ graph LR;
 
 ```mermaid
 graph LR;
-    A((Internet))-- IP -->B(App Service<br/>Web App);
-    B-- Service Tags -->C(Azure SQL);
-    classDef internet fill:#007FFF,color:white;
-    classDef unsafe fill:red,color:white;
-    classDef semisafe fill:orange,color:black;
-    classDef safe fill:darkgreen,color:black;
-    class A internet;
-    class B unsafe;
-    class C semisafe;
+  A((Internet))-- IP Filter -->a1;
+  subgraph "App Service Plan"
+    a1(Web App)
+  end
+  a1-- Service Tags -->C(Azure SQL);
+  classDef internet fill:#007FFF,color:white;
+  classDef unsafe fill:#ff3333,color:white;
+  classDef semisafe fill:darkorange,color:black;
+  classDef safe fill:darkgreen,color:black;
+  class A internet;
+  class a1 unsafe;
+  class C semisafe;
 ```
 
 Azure Services:
@@ -92,8 +95,11 @@ Suitable scenarios:
 graph LR;
     A((Internet))-->B((Public IP));
     B-->C(AppGW/WAF);
-    C--Subnet<br/>Restriction-->D(AppService<br/>Web App);
-    D-- Service Tags -->E(Azure SQL);
+    C--Subnet<br/>Restriction-->a1;
+    subgraph "App Service Plan"
+    a1(Web App)
+    end
+    a1-- Service Tags -->E(Azure SQL);
     classDef internet fill:#007FFF,color:white;
     classDef unsafe fill:green,color:white;
     classDef semisafe fill:orange,color:black;
@@ -129,13 +135,14 @@ Suitable scenarios:
 
 ```mermaid
 graph LR;
-    A((Internet))-->B(Front Door/WAF);
-    B-- Service Tags -->C(App Service<br/>Web App<br/>VNET Integration);
-    C-->D(Private<br/>Endpoint);
-    D-->E(Azure SQL);
-    classDef unsafe fill:green,color:black
-    classDef semisafe fill:orange,color:black
-    
+  A((Internet))-->B(Front Door/WAF);
+  B-- Service Tags -->C(App Service<br/>Web App<br/>VNET Integration);
+  C-->D(Private<br/>Endpoint);
+  D-->E(Azure SQL);
+  classDef internet fill:#007FFF,color:white;
+  classDef unsafe fill:green,color:white;
+  classDef semisafe fill:orange,color:black;
+  classDef safe fill:red,color:white;  
 ```
 
 Azure Services:
