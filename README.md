@@ -158,7 +158,7 @@ graph LR;
   classDef safe fill:darkgreen,color:white;
   class A internet;
   class B semisafe;
-  class a1,a2,a3,E safe;
+  class a1,a2,E safe;
 ```
 
 Azure Services:
@@ -185,11 +185,31 @@ Security at this level:
 
 ```mermaid
 graph LR;
-    A((Internet))-->B(Front Door/WAF);
-    B-->C(Private<br/>Endpoint);
-    C-->D(App Service<br/>Web App<br/>VNET Integration);
-    D-->E(Private<br/>Endpoint);
-    E-->F(Azure SQL);    
+  A((Internet))-->B(Front Door<br/>WAF);
+  B-->a1;
+  subgraph "Pe Subnet"
+  a1(Private<br/>Endpoint);
+  end;
+  a1-->a2;
+  subgraph "App Service Plan"
+  a2(Web App);
+  end;
+  a2-->a3;
+  subgraph "Backend<br/>Subnet"
+  a3(VNET<br/>Integration);
+  end;  
+  a3-->a4;
+  subgraph "Pe Subnet"
+  a4(Private<br/>Endpoint);
+  end;
+  a4-->F(Azure<br/>SQL);
+  classDef internet fill:#007FFF,color:white;
+  classDef unsafe fill:#ff3333,color:white;
+  classDef semisafe fill:darkorange,color:black;
+  classDef safe fill:darkgreen,color:white;
+  class A internet;
+  class B semisafe;
+  class a1,a2,a4,F safe;
 ```
 
 Azure Services:
