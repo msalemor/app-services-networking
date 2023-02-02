@@ -156,6 +156,7 @@ graph LR;
   classDef unsafe fill:#ff3333,color:white;
   classDef semisafe fill:darkorange,color:black;
   classDef safe fill:darkgreen,color:white;
+  class A internet;
   class B semisafe;
   class a1,a2,a3,E safe;
 ```
