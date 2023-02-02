@@ -235,11 +235,27 @@ Security at this level:
 
 ```mermaid
 graph LR;
-    A((Internet))-->B((Public IP));
-    B-->C(AppGw/WAF);
-    C-->D(ASE v3);
-    D-->E(Private<br/>Endpoint);
-    E-->F(Azure SQL);
+  A((Internet))-->B((Public IP));
+  B-->a1;
+  subgraph "AppGw Subnet"
+    a1(AppGw<br/>WAF);
+  end;
+  a1-->a2;
+  subgraph "ASE Subnet"
+    a2(ASE v3);
+  end;
+  a2-->a3;
+  subgraph "PE Subnet"
+    a3(Private<br/>Endpoint);
+  end;
+  a3-->F(Azure SQL);
+  classDef internet fill:#007FFF,color:white;
+  classDef unsafe fill:#ff3333,color:white;
+  classDef semisafe fill:darkorange,color:black;
+  classDef safe fill:darkgreen,color:white;
+  class A internet;
+  class B semisafe;
+  class a1,a2,a3,F safe;    
 ```
 
 Azure Services:
@@ -268,10 +284,25 @@ Security at this level:
 
 ```mermaid
 graph LR;
-    A((Internet))-->B((Public IP));
-    B-->C(AppGw/WAF);
-    C-->D(ASE v3);
-    D-->E(SQL MI);
+  A((Internet))-->B((Public IP));
+  B-->a1;
+  subgraph "AppGw Subnet"
+  a1(AppGw<br/>WAF);
+  end;
+  a1-->a2;
+  subgraph "ASE Subnet"
+    a2(ASE v3);
+  end;
+  a2-->a3;
+  subgraph "SQL Subnet"
+    a3(SQL MI);
+  end;  
+  classDef internet fill:#007FFF,color:white;
+  classDef unsafe fill:#ff3333,color:white;
+  classDef semisafe fill:darkorange,color:black;
+  classDef safe fill:darkgreen,color:white;
+  class A internet;  
+  class a1,a2,a3 safe;    
 ```
 
 Azure Services:
