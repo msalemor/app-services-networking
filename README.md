@@ -139,13 +139,23 @@ Suitable scenarios:
 ```mermaid
 graph LR;
   A((Internet))-->B(Front Door/WAF);
-  B-- Service Tags -->C(App Service<br/>Web App<br/>VNET Integration);
-  C-->D(Private<br/>Endpoint);
-  D-->E(Azure SQL);
+  B-- Service Tags -->a1;
+  
+    subgraph "App Service Plan"
+      a1(Web App<br/>VNET Integration);
+    end;
+  
+  a1-->a2;
+  subgraph "Subnet"
+    a2(Private<br/>Endpoint);
+  end;
+  a2-->E(Azure SQL);
   classDef internet fill:#007FFF,color:white;
-  classDef unsafe fill:green,color:white;
-  classDef semisafe fill:orange,color:black;
-  classDef safe fill:red,color:white;  
+  classDef unsafe fill:#ff3333,color:white;
+  classDef semisafe fill:darkorange,color:black;
+  classDef safe fill:darkgreen,color:white;
+  class B semisafe;
+  class a1,a2,E safe;
 ```
 
 Azure Services:
